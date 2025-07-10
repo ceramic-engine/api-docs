@@ -14,7 +14,10 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "label": "ceramic: active configuration"
+            "label": "ceramic: active configuration",
+            "runOptions": {
+                "instanceLimit": 2
+            }
         }
     ]
 }

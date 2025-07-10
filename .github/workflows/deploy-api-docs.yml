@@ -17,9 +17,9 @@ jobs:
       - name: Checkout submodules
         run: git submodule update --init --recursive
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: '10.16.3'
+          node-version: 22
       - name: Install packages
         working-directory: .
         run: |
@@ -49,7 +49,7 @@ jobs:
           sudo ln -s $NEKOPATH/nekotools            /usr/local/bin/nekotools
           sudo ln -s $NEKOPATH                      /usr/local/lib/neko
           sudo ln -s $NEKOPATH/libneko.so           /usr/local/lib/libneko.so
-          sudo ln -s $NEKOPATH/libneko.so.2.3.0     /usr/local/lib/libneko.so.2.3.0
+          sudo ln -s $NEKOPATH/libneko.so.2.4.0     /usr/local/lib/libneko.so.2.4.0
           sudo ln -s $NEKOPATH/libneko.so.2         /usr/local/lib/libneko.so.2
           sudo ldconfig
           sudo ldconfig /usr/local/lib
