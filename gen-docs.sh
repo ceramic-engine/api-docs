@@ -81,4 +81,4 @@ $(ceramic haxe) docs.hxml --xml ../../../docs/unity.xml -D doc-gen -D documentat
 
 $(ceramic haxelib) run dox -i ./docs --output-path docs --keep-field-order --exclude 'zpp_nape|microsoft|unityengine|fuzzaldrin|gif|timestamp|stb|sys|spec|sdl|polyline|poly2tri|opengl|openal|ogg|js|hsluv|hscript|glew|format|earcut|cs|cpp|com|assets|ceramic.scriptable|ceramic.macros' --title 'Ceramic API'
 
-$(ceramic node) transform-docs.js
+node transform-docs.js
