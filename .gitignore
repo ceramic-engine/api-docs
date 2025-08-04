@@ -8,3 +8,7 @@
 /project
 /ceramic.zip
 /ceramic
+/docs-md
+/docs-xml
+/gen-docs/bin
+/gen-docs/temp.json

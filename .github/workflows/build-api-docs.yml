@@ -3,12 +3,10 @@ on:
   push:
     branches:
       - main
-  repository_dispatch:
-    types: [deploy-api-docs]
 
 jobs:
 
-  deploy-api-docs:
+  build-api-docs:
     runs-on: ubuntu-22.04-arm
     steps:
       - uses: actions/checkout@v2
@@ -59,17 +57,12 @@ jobs:
         working-directory: ceramic/tools
         run: |
           ./ceramic link
+      - name: Install haxelibs
+        working-directory: .
+        run: |
+          mkdir .haxelib
+          haxelib install hxnodejs
       - name: Generate API Docs
         working-directory: .
         run: |
           ./gen-docs.sh
-      - name: Add .nojekyll
-        working-directory: .
-        run: |
-          touch docs/.nojekyll
-      - name: Deploy to Github Pages
-        uses: ceramic-engine/actions-gh-pages@v1.1.0
-        env:
-          PUBLISH_DIR: docs
-          PUBLISH_BRANCH: gh-pages
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

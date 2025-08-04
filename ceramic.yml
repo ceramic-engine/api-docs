@@ -20,54 +20,19 @@ app:
         +defines:
             - ceramic_unity_default_net_std
 
-    if use_arcade:
-        +plugins:
-            - arcade
-
-    if use_nape:
-        +plugins:
-            - nape
-
-    if use_script:
-        +plugins:
-            - script
-
-    if use_spine:
-        +plugins:
-            - spine
-
-    if use_sprite:
-        +plugins:
-            - sprite
-
-    if use_tilemap:
-        +plugins:
-            - tilemap
-
-    if use_ui:
-        +plugins:
-            - ui
-
-    if use_arcade:
-        +plugins:
-            - arcade
-
-    if use_dialogs:
-        +plugins:
-            - dialogs
-
-    if use_elements:
-        +plugins:
-            - ui
-            - elements
-
-    if use_gif:
-        +plugins:
-            - gif
-
-    if use_imgui:
-        +plugins:
-            - imgui
+    plugins:
+        - arcade
+        - nape
+        - script
+        - spine
+        - sprite
+        - ase
+        - tilemap
+        - ldtk
+        - ui
+        - dialogs
+        - elements
+        - gif
 
     if web:
         +defines:
