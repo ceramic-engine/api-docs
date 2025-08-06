@@ -49,7 +49,15 @@ for xml_file in docs-xml/*.xml; do
     # Generate table of contents
     echo "Generating table of contents for $base_name..."
     node gen-docs/bin/gen-docs.js toc "$xml_file" "docs-md/$base_name/toc.json"
+    
+    # Generate index
+    echo "Generating index for $base_name..."
+    node gen-docs/bin/gen-docs.js index "docs-md/$base_name/toc.json" "docs-md/$base_name/index.md" "$base_name"
 done
+
+# Generate root index
+echo "Generating root index..."
+node gen-docs/bin/gen-docs.js root-index "docs-md"
 
 # Old dox command (commented out since we're using our own generator now)
 # $(ceramic haxelib) run dox -i ./docs --output-path docs --keep-field-order --exclude 'zpp_nape|microsoft|unityengine|fuzzaldrin|gif|timestamp|stb|sys|spec|sdl|polyline|poly2tri|opengl|openal|ogg|js|hsluv|hscript|glew|format|earcut|cs|cpp|com|assets|ceramic.scriptable|ceramic.macros' --title 'Ceramic API'
