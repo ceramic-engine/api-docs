@@ -33,6 +33,8 @@ app:
         - dialogs
         - elements
         - gif
+        - loreline
+        - http
 
     if web:
         +defines:
